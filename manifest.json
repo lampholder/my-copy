@@ -1,0 +1,30 @@
+{
+    "manifest_version": 2,
+    "name": "my-copy",
+    "version": "1.0",
+    "description": "Saves a copy of submitted web forms locally.",
+
+    "icons": {
+        "48": "icons/border-48.png"
+    },
+
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.mozillademos.org/*",
+                "*://report.ico.org.uk/security-breach/"
+            ],
+            "js": ["my-copy.js"]
+        }
+    ],
+
+    "background": {
+      "scripts": ["background-script.js"]
+    },
+
+    "permissions": [
+        "downloads",
+        "<all_urls>"
+    ]
+
+}
